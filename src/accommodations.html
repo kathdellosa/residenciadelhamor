@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations - Residencia del Hamor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <img src="residencia.jpg" alt="Residencia del Hamor" class="h-10 w-10 rounded-full">
+            </div>
+          <div>
+              <a href="index.html" class="px-4 hover:text-gray-300">Home</a>
+              <a href="accommodations.html" class="px-4 hover:text-gray-300">Accommodations</a>
+              <a href="amenities.html" class="px-4 hover:text-gray-300">Amenities</a>
+              <a href="contact.html" class="px-4 hover:text-gray-300">Contact</a>
+              <a href="booking.html" class="px-4 hover:text-gray-300">Book Now</a>
+          </div>
+      </div>
+  </nav>
+  <section class="py-20">
+      <div class="container mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-10">Our Accommodations</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal1')">
+                  <img src="deluxe_villa.jpg" alt="Deluxe Villa" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Deluxe Villa</h3>
+                      <p class="text-gray-600">Enjoy a luxurious stay with stunning views.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱2500 per night</p>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal2')">
+                  <img src="standard_villa.jpg" alt="Standard Villa" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Standard Villa</h3>
+                      <p class="text-gray-600">Comfort and elegance in every detail.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱1800 per night</p>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal3')">
+                  <img src="duplex_villa_private_pool.jpg" alt="Duplex Villa Private Pool" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Duplex Villa with Private Pool</h3>
+                      <p class="text-gray-600">A cozy retreat for your getaway.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱4000 per night</p>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal4')">
+                  <img src="suite_room.jpg" alt="Suite Room" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Suite Room</h3>
+                      <p class="text-gray-600">Luxurious suite with a beautiful view.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱3000 per night</p>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal5')">
+                  <img src="duplex_villa.jpg" alt="Family Villa" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Duplex Villa (No Pool)</h3>
+                      <p class="text-gray-600">Spacious villa perfect for families.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱3500 per night</p>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onclick="openModal('modal6')">
+                  <img src="panoramic_villa.jpg" alt="Panoramic Villa" class="w-full h-48 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-xl font-semibold">Panoramic Duplex Villa with Pool</h3>
+                      <p class="text-gray-600">Enjoy breathtaking views from this villa.</p>
+                      <p class="text-gray-800 font-bold mt-2">₱4500 per night</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2 class="text-2xl font-bold">Deluxe Villa</h2>
+          <p>Enjoy a luxurious stay with stunning views. This villa features a king-size bed, a private balcony, and a spacious bathroom.</p>
+          <p class="font-bold">Price: ₱2500 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <div id="modal2" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2 class="text-2xl font-bold">Standard Villa</h2>
+          <p>Comfort and elegance in every detail. This villa includes a queen-size bed, a cozy sitting area, and a modern bathroom.</p>
+          <p class="font-bold">Price: ₱1800 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <div id="modal3" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <h2 class="text-2xl font-bold">Duplex Villa with Private Pool</h2>
+          <p>A cozy retreat for your getaway. This villa features two bedrooms, a private pool, and a large terrace.</p>
+          <p class="font-bold">Price: ₱4000 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <div id="modal4" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal4')">&times;</span>
+          <h2 class="text-2xl font-bold">Suite Room</h2>
+          <p>Luxurious suite with a beautiful view. This suite includes a king-size bed, a spacious living area, and a modern bathroom.</p>
+          <p class="font-bold">Price: ₱3000 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <div id="modal5" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <h2 class="text-2xl font-bold">Duplex Villa (No Pool)</h2>
+          <p>Spacious villa perfect for families. This villa features three bedrooms, a large living area, and a private garden.</p>
+          <p class="font-bold">Price: ₱3500 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <div id="modal6" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal6')">&times;</span>
+          <h2 class="text-2xl font-bold">Panoramic Duplex Villa with Pool</h2>
+          <p>Enjoy breathtaking views from this villa. This villa features a large terrace, a king-size bed, and a luxurious bathroom.</p>
+          <p class="font-bold">Price: ₱4500 per night</p>
+          <p>Availability: Check our booking section for available dates.</p>
+      </div>
+  </div>
+
+  <footer class="bg-gray-800 text-white py-10">
+      <div class="container mx-auto text-center">
+          <p>&copy; 2023 Residencia del Hamor. All rights reserved.</p>
+          <div class="flex justify-center space-x-4 mt-4">
+              <a href="https://www.facebook.com/recidenciadelhamor" class="text-gray-400 hover:text-white">Facebook</a>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+      function openModal(modalId) {
+          document.getElementById(modalId).style.display = "block";
+      }
+
+      function closeModal(modalId) {
+          document.getElementById(modalId).style.display = "none";
+      }
+
+      window.onclick = function(event) {
+          if (event.target.classList.contains('modal')) {
+              closeModal(event.target.id);
+          }
+      }
+  </script>
+
+</body>
+</html>
